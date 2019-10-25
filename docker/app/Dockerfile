@@ -29,4 +29,4 @@ RUN pip3 install cryptography --force-reinstall
 RUN airflow upgradedb
 
 # servis otomatik baslatilmayacak ise asagidaki komut yorum satirina alinmalidir.
-CMD ["/usr/bin/supervisord"] 
+# CMD ["/usr/bin/supervisord"] 
