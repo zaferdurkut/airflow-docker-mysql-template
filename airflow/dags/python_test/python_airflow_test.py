@@ -38,7 +38,7 @@ args = {
 }
 
 dag = DAG(
-    dag_id='ssh_airflow_test', 
+    dag_id='python_airflow_test', 
     default_args=args,
     schedule_interval='*/2 * * * *',
     catchup=False)
