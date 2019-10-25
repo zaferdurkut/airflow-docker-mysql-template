@@ -47,7 +47,9 @@ dag = DAG(
 def _check_date(execution_date, **context):
     min_date = datetime.datetime.now() - datetime.timedelta(weeks=1)
     if execution_date < min_date:
-        raise AirflowSkipException(f"No data available on this execution_date ({execution_date}).")
+        raise AirflowSkipException(
+                                "No data available on this execution_date ({execution_date})".format
+                                                                                    (execution_date=execution_date))
 
 check_date = PythonOperator(
     task_id="check_if_min_date",
