@@ -11,6 +11,10 @@ Proje dizinine gidilmesi
 ```
 cd airlow
 ```
+.env dosyası oluşturulmalıdır. İçerisinde bulunan parameterler doldurulmalıdır.
+```
+cp default.env .env
+```
 Servislerin kurulumu ve başlatılması için aşağıdaki komut çalıştırılmalıdır. Buna ek olarak docker-compose.yml dosyası içerisinden çıkış portları için ayarlamalar yapılabilir. Airflow servisi için bir değişiklik yapılacak ise airflow/airflow.cfg dosyası içerisinde port ayarları bu port için yapılmalıdır.
 ```
 docker-compose up -d --build
@@ -36,8 +40,7 @@ Servise http://localhost:8080/ adresinden ulaşabilirsiniz.
 
 Bu işlemi yaptıktan sonra Airflow servisi Mysql veritabanına bağlı olarak çalışabilecektir.
 ![Airflow](static/main.png "Airflow Main Page")
-![Airflow](static/python_dag.png "Airflow Main Page")
-![Airflow](static/ssh_dag.png "Airflow Main Page")
+
 
 
 ##### Ek Bilgiler
@@ -49,8 +52,11 @@ Servis logları dizi airflow/logs dizini altında olacaktır. Eğer volume veril
 
  DB verileri mevcut docker-compose yapısında .data klasörü altında olacaktır.
 
+
 ### Dag İşlemleri
-Servis içerisinde yeni [DAG](https://airflow.apache.org/concepts.html) eklenecek ise airflow/dags dizini altına eklenmeli ve ekleme işlemi tamamlandıktan sonra servisi güncellemek için aşağıdaki komut çalıştırılmalıdır.
+Servis içerisinde yeni [DAG](https://airflow.apache.org/concepts.html) eklenecek ise airflow/dags dizini altına eklenmeli ve ekleme işlemi tamamlandıktan sonra servisi güncellemek için aşağıdaki komut çalıştırılmalıdır. Örnek olarak ssh ve python operatorler için 2 adet dağ eklenmiştir.
 ```
 airflow upgradedb
 ```
+![Airflow](static/python_dag.png "Airflow Main Page")
+![Airflow](static/ssh_dag.png "Airflow Main Page")
