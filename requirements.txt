@@ -8,6 +8,6 @@ six==1.11.0
 middleware==1.2.3
 psycopg2==2.8.3
 flask==1.1.1
-paramiko==2.6.0
+paramiko==2.10.1
 sshtunnel==0.1.5
 marshmallow-sqlalchemy==0.16.2
