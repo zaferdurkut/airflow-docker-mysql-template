@@ -3,7 +3,7 @@ python-dotenv==0.10.1
 tabulate==0.8.3
 marshmallow==2.19.0
 apache-airflow==1.10.4
-werkzeug==0.15.5
+werkzeug==2.2.3
 six==1.11.0
 middleware==1.2.3
 psycopg2==2.8.3
